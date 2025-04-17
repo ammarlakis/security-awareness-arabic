@@ -3,7 +3,7 @@ import react from '@astrojs/react';
 import copy from 'rollup-plugin-copy';
 
 export default defineConfig({
-  site: 'https://yourdomain.com',
+  site: 'https://ammarlakis.github.io/security-awareness-arabic/',
   integrations: [react()],
   markdown: {
     syntaxHighlight: 'prism',
