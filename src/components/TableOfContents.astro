@@ -6,7 +6,7 @@ const { course, lesson, tableOfContents } = Astro.props;
 <ul class="toc">
   {tableOfContents.map((entry: any) => (
     <li>
-      <a href={entry.id} class={entry.id === lesson ? 'active' : ''}>
+      <a href={`../${entry.id}`} class={entry.id === lesson ? 'active' : ''}>
         {entry.type === 'lesson' ? (
           <BookOpenIcon class="icon" />
         ) : entry.type === 'quiz' ? (

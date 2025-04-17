@@ -3,10 +3,10 @@ import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/solid';
 const { course, previousLesson, nextLesson } = Astro.props;
 ---
 <div class="navigation">
-  {previousLesson && <a href={`${previousLesson}`} aria-label="الدرس السابق">
+  {previousLesson && <a href={`../${previousLesson}`} aria-label="الدرس السابق">
     <ArrowLeftIcon class="icon" /> الدرس السابق
   </a>}
-  {nextLesson && <a href={`${nextLesson}`} aria-label="الدرس التالي">
+  {nextLesson && <a href={`../${nextLesson}`} aria-label="الدرس التالي">
     الدرس التالي <ArrowRightIcon class="icon" />
   </a>}
 </div>
