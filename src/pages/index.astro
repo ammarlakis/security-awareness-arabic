@@ -8,11 +8,11 @@ const courses = await courseIndex();
   <head>
     <meta charset="UTF-8" />
     <title>دروس الأمان الرقمي</title>
-    <link rel="stylesheet" href="/styles/global.css" />
+    <link rel="stylesheet" href={`${Astro.site}/styles/global.css`} />
   </head>
   <body>
     <div class="homepage-icon">
-      <a href="/" aria-label="الصفحة الرئيسية">
+      <a href={`${Astro.site}/`} aria-label="الصفحة الرئيسية">
         <HomeIcon class="icon" />
       </a>
     </div>
