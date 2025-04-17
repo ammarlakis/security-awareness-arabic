@@ -20,7 +20,7 @@ const courses = await courseIndex(Astro.site);
     <div class="grid-container">
       {courses.map((course) => (
         <a href={course.url} class="grid-item" key={course.slug}>
-          <img src={`/images/${course.image}`} alt={course.title} />
+          <img src={`${Astro.site}/images/${course.image}`} alt={course.title} />
           <div class="grid-item-title">{course.title}</div>
         </a>
       ))}
