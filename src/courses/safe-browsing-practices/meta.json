@@ -1,0 +1,9 @@
+{
+  "title": "ممارسات التصفح الآمن",
+  "lessons": [
+    { "id": "lesson1", "title": "كيفية تجنب المواقع الاحتيالية" },
+    { "id": "lesson2", "title": "أفضل ممارسات التصفح الآمن" },
+    { "id": "lesson3", "title": "التعرف على التنزيلات الضارة" }
+  ],
+  "image": "/assets/safe-browsing-practices.jpg"
+}

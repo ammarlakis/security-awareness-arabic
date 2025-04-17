@@ -1,5 +1,6 @@
 ---
 import courseIndex from "../utils/courseIndex.js";
+import { HomeIcon } from '@heroicons/react/24/solid';
 const courses = await courseIndex();
 ---
 
@@ -10,15 +11,77 @@ const courses = await courseIndex();
     <link rel="stylesheet" href="/styles/global.css" />
   </head>
   <body>
+    <div class="homepage-icon">
+      <a href="/" aria-label="الصفحة الرئيسية">
+        <HomeIcon class="icon" />
+      </a>
+    </div>
     <h1>دروس الأمان الرقمي</h1>
-    <ul>
-      {
-        courses.map((course) => (
-          <li>
-            <a href={course.url}>{course.title}</a>
-          </li>
-        ))
+    <div class="grid-container">
+      {courses.map((course) => (
+        <a href={course.url} class="grid-item" key={course.slug}>
+          <img src={`/images/${course.image}`} alt={course.title} />
+          <div class="grid-item-title">{course.title}</div>
+        </a>
+      ))}
+    </div>
+    <style>
+      .homepage-icon {
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        z-index: 1000;
       }
-    </ul>
+
+      .icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        color: #4caf50;
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      .grid-item {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        text-align: center;
+        background-color: #f9f9f9;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+
+      .grid-item img {
+        width: 100%;
+        height: auto;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+      }
+
+      .grid-item-title {
+        padding: 0.5rem;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .grid-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .grid-item a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+      }
+
+      .grid-item a:hover {
+        color: #007acc;
+      }
+    </style>
   </body>
 </html>

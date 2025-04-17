@@ -1,13 +1,38 @@
 ---
+import { BookOpenIcon, ClipboardDocumentListIcon } from '@heroicons/react/24/solid';
 const { course, lesson, tableOfContents } = Astro.props;
 ---
 <h3>محتويات الدورة</h3>
 <ul class="toc">
-  {tableOfContents.map(entry => (
+  {tableOfContents.map((entry: any) => (
     <li>
       <a href={`/courses/${course}/${entry.id}`} class={entry.id === lesson ? 'active' : ''}>
+        {entry.type === 'lesson' ? (
+          <BookOpenIcon class="icon" />
+        ) : entry.type === 'quiz' ? (
+          <ClipboardDocumentListIcon class="icon" />
+        ) : null}
         {entry.title}
       </a>
     </li>
   ))}
 </ul>
+
+<style>
+  .icon {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+  }
+
+  .toc a {
+    display: flex;
+    align-items: center;
+  }
+
+  .toc a.active {
+    font-weight: bold;
+    color: #4caf50;
+  }
+</style>

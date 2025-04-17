@@ -1,0 +1,16 @@
+- body: "ما هو التشفير؟"
+  options:
+    - answer: "طريقة لحماية الرسائل بجعلها غير قابلة للقراءة إلا للمستلم"
+      correct: true
+    - answer: "برنامج لتسريع الإنترنت"
+      correct: false
+    - answer: "أداة لحذف الرسائل القديمة"
+      correct: false
+- body: "ما هي التطبيقات التي توفر التشفير التلقائي؟"
+  options:
+    - answer: "واتساب وسيغنال"
+      correct: true
+    - answer: "تطبيقات البريد الإلكتروني العادية"
+      correct: false
+    - answer: "أي تطبيق مراسلة"
+      correct: false

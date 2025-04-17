@@ -1,0 +1,17 @@
+questions:
+  - body: "ما هي الهندسة الاجتماعية؟"
+    options:
+      - answer: "أساليب لخداع الأشخاص للكشف عن معلومات حساسة"
+        correct: true
+      - answer: "برنامج لحماية الأجهزة"
+        correct: false
+      - answer: "نوع من الفيروسات"
+        correct: false
+  - body: "كيف يمكنك تجنب الاحتيال؟"
+    options:
+      - answer: "التحقق من هوية المرسل قبل الرد"
+        correct: true
+      - answer: "مشاركة كلمات المرور مع الجميع"
+        correct: false
+      - answer: "النقر على جميع الروابط في الرسائل"
+        correct: false

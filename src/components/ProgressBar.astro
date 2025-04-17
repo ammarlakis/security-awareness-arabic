@@ -1,48 +1,81 @@
 ---
+import { CheckCircleIcon, EllipsisHorizontalIcon } from '@heroicons/react/24/solid';
 const { current, total } = Astro.props;
-const progress = (current / total) * 100;
+const progress = Math.min((current / total) * 100, 100); // Ensure progress does not exceed 100%
 ---
 <div class="progress-bar-container">
   <!-- Grey background for the progress bar -->
   <div class="progress-bar-background">
     <!-- Green progress bar -->
-    <div class="progress-bar" style=`{width: ${progress}%}`></div>
+    <div class="progress-bar" style={`width: ${progress}%`}></div>
+  </div>
+  <div class="progress-icons">
+    {Array.from({ length: total }, (_, index: number) => (
+      <span class="progress-icon">
+        {index < current ? (
+          <CheckCircleIcon class="icon completed" />
+        ) : index === current ? (
+          <EllipsisHorizontalIcon class="icon current" />
+        ) : (
+          <span class="icon pending"></span>
+        )}
+      </span>
+    ))}
   </div>
 </div>
 
 <style>
   .progress-bar-container {
     position: sticky;
-    top: 10px; /* Keep it sticky */
+    top: 0;
     z-index: 100;
     width: 100%;
-    height: 20px;
+    height: 40px;
     margin-bottom: 1rem;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
     padding: 0 10px;
+    background-color: white;
   }
 
   .progress-bar-background {
     width: 100%;
-    height: 100%;
-    background-color: #e0e0e0;  /* Light grey background */
+    height: 20px;
+    background-color: #e0e0e0;
     border-radius: 10px;
+    margin-bottom: 5px;
   }
 
   .progress-bar {
     height: 100%;
-    background-color: #4caf50;  /* Green progress */
+    background-color: #4caf50;
     border-radius: 10px;
   }
 
-  .progress-bar span {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-weight: bold;
+  .progress-icons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .icon.completed {
+    color: #4caf50;
+  }
+
+  .icon.current {
+    color: #ff9800;
+  }
+
+  .icon.pending {
+    width: 1rem;
+    height: 1rem;
+    background-color: #e0e0e0;
+    border-radius: 50%;
   }
 </style>

@@ -1,0 +1,9 @@
+{
+  "title": "أمان الأجهزة والبيانات",
+  "lessons": [
+    { "id": "lesson1", "title": "كيفية تأمين أجهزتك" },
+    { "id": "lesson2", "title": "استخدام التشفير لحماية رسائلك" },
+    { "id": "lesson3", "title": "أهمية تحديث البرامج" }
+  ],
+  "image": "/assets/device-and-data-security.jpg"
+}

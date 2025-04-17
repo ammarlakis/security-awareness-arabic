@@ -1,0 +1,8 @@
+{
+  "title": "أساسيات خصوصية البيانات",
+  "lessons": [
+    { "id": "lesson1", "title": "ما هي البيانات الشخصية؟" },
+    { "id": "lesson2", "title": "خطوات بسيطة لحماية بياناتك" }
+  ],
+  "image": "/assets/data-privacy-basics.jpg"
+}

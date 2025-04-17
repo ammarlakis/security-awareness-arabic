@@ -1,13 +1,17 @@
 ---
+import { CheckCircleIcon, XCircleIcon, QuestionMarkCircleIcon } from '@heroicons/react/24/solid';
 import { marked } from 'marked';
 const { quiz } = Astro.props;
 ---
 <div class="quiz-container">
-  {quiz.map((q, i) => (
-    <div class="quiz-block" key={i}>
+  <div class="question-box">
+    <h2>سؤال</h2>
+  </div>
+  {quiz.map((q: any, i: number) => (
+    <div class="quiz-block">
       <div class="quiz-question" set:html={marked.parse(q.body)}></div>
       <ul>
-        {q.options.map((opt, idx) => (
+        {q.options.map((opt: any, idx: number) => (
           <li class="quiz-option">
             <label>
               <input
@@ -23,7 +27,8 @@ const { quiz } = Astro.props;
           </li>
         ))}
       </ul>
-      <div id={`feedback-${i}`} class="quiz-feedback"></div>
+      <div id={`feedback-${i}`} class="quiz-feedback">
+      </div>
     </div>
   ))}
   <script>
@@ -31,15 +36,58 @@ const { quiz } = Astro.props;
       const inputs = document.querySelectorAll('input[type="radio"][data-question]');
       inputs.forEach((input) => {
         input.addEventListener('change', () => {
-          const questionIndex = input.dataset.question;
-          const correct = input.dataset.correct === 'true';
+          const questionIndex = (input as HTMLInputElement).dataset.question;
+          const correct = (input as HTMLInputElement).dataset.correct === 'true';
           const feedback = document.getElementById(`feedback-${questionIndex}`);
           const radios = document.querySelectorAll(`input[name='quiz-${questionIndex}']`);
-          radios.forEach(r => r.disabled = true);
-          feedback.textContent = correct ? '✔️ إجابة صحيحة!' : '❌ إجابة خاطئة، حاول مرة أخرى.';
-          feedback.style.color = correct ? 'green' : 'red';
+          radios.forEach((r) => ((r as HTMLInputElement).disabled = true));
+          if (feedback) {
+            feedback.innerHTML = correct
+              ? '<span class="icon-container"><CheckCircleIcon class="icon correct" /></span> إجابة صحيحة!'
+              : '<span class="icon-container"><XCircleIcon class="icon incorrect" /></span> إجابة خاطئة، حاول مرة أخرى.';
+            feedback.style.color = correct ? 'green' : 'red';
+          }
         });
       });
     });
   </script>
 </div>
+
+<style>
+  .question-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .question-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+    color: #ff9800;
+  }
+
+  .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: middle;
+  }
+
+  .icon.correct {
+    color: green;
+  }
+
+  .icon.incorrect {
+    color: red;
+  }
+
+  .icon.pending {
+    color: gray;
+  }
+
+  .icon-container {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 0.5rem;
+  }
+</style>

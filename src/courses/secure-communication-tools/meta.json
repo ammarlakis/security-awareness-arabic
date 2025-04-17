@@ -1,0 +1,8 @@
+{
+  "title": "أدوات الاتصال الآمن",
+  "lessons": [
+    { "id": "lesson1", "title": "كيفية استخدام تطبيقات الاتصال بأمان" },
+    { "id": "lesson2", "title": "أفضل ممارسات الأمان عند إجراء المكالمات" }
+  ],
+  "image": "/assets/secure-communication-tools.jpg"
+}

@@ -1,0 +1,16 @@
+- body: "ما هي أنواع الاحتيال الشائعة على الإنترنت؟"
+  options:
+    - answer: "عروض عمل مزيفة وجوائز مزيفة"
+      correct: true
+    - answer: "زيادة سرعة الإنترنت"
+      correct: false
+    - answer: "إعلانات لتحسين أداء الجهاز"
+      correct: false
+- body: "كيف يمكنك تجنب الاحتيال عبر الإنترنت؟"
+  options:
+    - answer: "التحقق من العروض عبر المصادر الموثوقة"
+      correct: true
+    - answer: "النقر على جميع الروابط في الرسائل"
+      correct: false
+    - answer: "مشاركة معلوماتك الشخصية مع الجميع"
+      correct: false

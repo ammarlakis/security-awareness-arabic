@@ -1,0 +1,16 @@
+- body: "ما الذي يجعل كلمة المرور قوية؟"
+  options:
+    - answer: "استخدام مزيج من الحروف والأرقام والرموز"
+      correct: true
+    - answer: "استخدام كلمة مرور قصيرة"
+      correct: false
+    - answer: "استخدام اسمك الشخصي"
+      correct: false
+- body: "ما هي أفضل طريقة لتذكر كلمات المرور؟"
+  options:
+    - answer: "استخدام مدير كلمات المرور"
+      correct: true
+    - answer: "كتابة كلمات المرور على ورقة"
+      correct: false
+    - answer: "استخدام نفس كلمة المرور لكل الحسابات"
+      correct: false

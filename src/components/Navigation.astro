@@ -1,11 +1,21 @@
 ---
+import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/solid';
 const { course, previousLesson, nextLesson } = Astro.props;
 ---
 <div class="navigation">
   {previousLesson && <a href={`/courses/${course}/${previousLesson}`} aria-label="الدرس السابق">
-    	← الدرس السابق
+    <ArrowLeftIcon class="icon" /> الدرس السابق
   </a>}
   {nextLesson && <a href={`/courses/${course}/${nextLesson}`} aria-label="الدرس التالي">
-    	الدرس التالي →
+    الدرس التالي <ArrowRightIcon class="icon" />
   </a>}
 </div>
+
+<style>
+  .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0 0.5rem;
+    vertical-align: middle;
+  }
+</style>

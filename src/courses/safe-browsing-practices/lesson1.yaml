@@ -1,0 +1,16 @@
+- body: "ما هي أول خطوة للتحقق من موقع إلكتروني؟"
+  options:
+    - answer: "التأكد من أن العنوان يبدأ بـ 'https://'"
+      correct: true
+    - answer: "النقر على أي رابط في الموقع"
+      correct: false
+    - answer: "إدخال معلوماتك الشخصية مباشرة"
+      correct: false
+- body: "كيف يمكنك تجنب المواقع الاحتيالية؟"
+  options:
+    - answer: "التحقق من عنوان URL ومصدر الموقع"
+      correct: true
+    - answer: "النقر على الروابط المشبوهة"
+      correct: false
+    - answer: "إدخال بياناتك في أي موقع"
+      correct: false

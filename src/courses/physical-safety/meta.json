@@ -1,0 +1,8 @@
+{
+  "title": "السلامة الجسدية في العصر الرقمي",
+  "lessons": [
+    { "id": "lesson1", "title": "حماية بيانات الموقع" },
+    { "id": "lesson2", "title": "السلامة أثناء المعاملات عبر الإنترنت" }
+  ],
+  "image": "/assets/physical-safety.jpg"
+}

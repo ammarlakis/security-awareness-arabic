@@ -1,0 +1,8 @@
+{
+  "title": "التحكم الأبوي وسلامة الأسرة",
+  "lessons": [
+    { "id": "lesson1", "title": "إعداد أدوات التحكم الأبوي" },
+    { "id": "lesson2", "title": "تعليم الأطفال عن السلامة على الإنترنت" }
+  ],
+  "image": "/assets/parental-control-and-family-safety.jpg"
+}

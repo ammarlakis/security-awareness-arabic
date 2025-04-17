@@ -1,0 +1,17 @@
+questions:
+  - question: "ما هي أول خطوة يجب اتخاذها إذا تعرضت للاختراق؟"
+    options:
+      - answer: "تغيير كلمة المرور فورًا"
+        correct: true
+      - answer: "إلغاء حسابك"
+        correct: false
+      - answer: "تجاهل المشكلة"
+        correct: false
+  - question: "ماذا يجب أن تفعل إذا رأيت نشاطًا غريبًا على حساباتك؟"
+    options:
+      - answer: "إبلاغ البنك أو مزود الخدمة"
+        correct: true
+      - answer: "مشاركة المشكلة مع العامة"
+        correct: false
+      - answer: "عدم اتخاذ أي إجراء"
+        correct: false

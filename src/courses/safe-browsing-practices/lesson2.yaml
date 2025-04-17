@@ -1,0 +1,16 @@
+- body: "ما هي أفضل طريقة لحماية نفسك أثناء التصفح؟"
+  options:
+    - answer: "استخدام متصفح محدث دائمًا"
+      correct: true
+    - answer: "حفظ كلمات المرور في المتصفح"
+      correct: false
+    - answer: "تجاهل إعدادات الخصوصية"
+      correct: false
+- body: "ماذا يجب أن تفعل عند استخدام شبكة Wi-Fi عامة؟"
+  options:
+    - answer: "استخدام شبكة VPN"
+      correct: true
+    - answer: "إدخال معلوماتك البنكية"
+      correct: false
+    - answer: "تجاهل أمان الشبكة"
+      correct: false

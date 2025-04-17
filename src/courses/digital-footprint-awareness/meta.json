@@ -1,0 +1,8 @@
+{
+  "title": "التوعية بالبصمة الرقمية",
+  "lessons": [
+    { "id": "lesson1", "title": "ما هي البصمة الرقمية؟" },
+    { "id": "lesson2", "title": "كيفية إدارة بصمتك الرقمية" }
+  ],
+  "image": "/assets/digital-footprint-awareness.jpg"
+}

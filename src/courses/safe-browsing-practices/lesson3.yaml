@@ -1,0 +1,16 @@
+- body: "ما هي التنزيلات الضارة؟"
+  options:
+    - answer: "ملفات أو تطبيقات تضر بجهازك أو تسرق معلوماتك"
+      correct: true
+    - answer: "ملفات تزيد من سرعة الإنترنت"
+      correct: false
+    - answer: "تطبيقات لتحسين أداء الجهاز"
+      correct: false
+- body: "كيف يمكنك تجنب التنزيلات الضارة؟"
+  options:
+    - answer: "تنزيل التطبيقات فقط من المتاجر الرسمية"
+      correct: true
+    - answer: "فتح جميع الملفات المرسلة عبر البريد الإلكتروني"
+      correct: false
+    - answer: "تنزيل التطبيقات من أي موقع"
+      correct: false

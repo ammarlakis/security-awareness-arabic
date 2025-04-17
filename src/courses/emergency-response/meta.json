@@ -1,0 +1,8 @@
+{
+  "title": "الاستجابة للطوارئ",
+  "image": "/assets/emergency-response.jpg",
+  "lessons": [
+    { "id": "lesson1", "title": "ماذا تفعل إذا تم اختراق حسابك؟" },
+    { "id": "lesson2", "title": "كيفية التعافي من خرق أمني" }
+  ]
+}

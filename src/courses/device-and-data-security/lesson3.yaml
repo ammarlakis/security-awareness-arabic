@@ -1,0 +1,16 @@
+- body: "لماذا تعتبر تحديثات البرامج مهمة؟"
+  options:
+    - answer: "لتصحيح الثغرات الأمنية"
+      correct: true
+    - answer: "لإلغاء الحاجة إلى كلمات المرور"
+      correct: false
+    - answer: "لزيادة استهلاك البطارية"
+      correct: false
+- body: "ما هي أفضل طريقة لإدارة التحديثات؟"
+  options:
+    - answer: "تفعيل التحديثات التلقائية"
+      correct: true
+    - answer: "تجاهل إشعارات التحديث"
+      correct: false
+    - answer: "إلغاء تثبيت البرامج القديمة"
+      correct: false

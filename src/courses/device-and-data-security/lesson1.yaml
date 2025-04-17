@@ -1,0 +1,16 @@
+- body: "ما هي أول خطوة لتأمين جهازك؟"
+  options:
+    - answer: "تحديث نظام التشغيل بانتظام"
+      correct: true
+    - answer: "إلغاء تثبيت جميع التطبيقات"
+      correct: false
+    - answer: "إيقاف تشغيل الجهاز دائمًا"
+      correct: false
+- body: "لماذا يجب استخدام قفل الشاشة؟"
+  options:
+    - answer: "لحماية الجهاز من الوصول غير المصرح به"
+      correct: true
+    - answer: "لزيادة سرعة الجهاز"
+      correct: false
+    - answer: "لإلغاء الحاجة إلى كلمات المرور"
+      correct: false

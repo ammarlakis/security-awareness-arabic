@@ -1,0 +1,16 @@
+- body: "ما هو الهدف الأساسي للأمن السيبراني؟"
+  options:
+    - answer: "حماية المعلومات والبيانات الشخصية"
+      correct: true
+    - answer: "زيادة سرعة الإنترنت"
+      correct: false
+    - answer: "إلغاء الإعلانات"
+      correct: false
+- body: "لماذا يجب علينا حماية حياتنا الرقمية؟"
+  options:
+    - answer: "لمنع القراصنة من سرقة المعلومات الشخصية"
+      correct: true
+    - answer: "للحصول على إنترنت مجاني"
+      correct: false
+    - answer: "لإلغاء الحاجة إلى كلمات المرور"
+      correct: false
