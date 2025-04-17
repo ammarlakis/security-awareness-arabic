@@ -1,7 +1,7 @@
 ---
 import courseIndex from "../utils/courseIndex.js";
 import { HomeIcon } from '@heroicons/react/24/solid';
-const courses = await courseIndex();
+const courses = await courseIndex(Astro.site);
 ---
 
 <html dir="rtl" lang="ar">
