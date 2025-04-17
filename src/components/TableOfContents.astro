@@ -1,0 +1,13 @@
+---
+const { course, lesson, tableOfContents } = Astro.props;
+---
+<h3>محتويات الدورة</h3>
+<ul class="toc">
+  {tableOfContents.map(entry => (
+    <li>
+      <a href={`/courses/${course}/${entry.id}`} class={entry.id === lesson ? 'active' : ''}>
+        {entry.title}
+      </a>
+    </li>
+  ))}
+</ul>

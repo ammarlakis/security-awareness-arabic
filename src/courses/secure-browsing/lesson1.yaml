@@ -1,0 +1,6 @@
+- body: "### ما هو التصفح الآمن؟"
+  options:
+    - answer: "استخدام VPN فقط"
+      correct: false
+    - answer: "تجنب المواقع المشبوهة وحماية الخصوصية"
+      correct: true

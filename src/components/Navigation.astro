@@ -1,0 +1,11 @@
+---
+const { course, previousLesson, nextLesson } = Astro.props;
+---
+<div class="navigation">
+  {previousLesson && <a href={`/courses/${course}/${previousLesson}`} aria-label="الدرس السابق">
+    	← الدرس السابق
+  </a>}
+  {nextLesson && <a href={`/courses/${course}/${nextLesson}`} aria-label="الدرس التالي">
+    	الدرس التالي →
+  </a>}
+</div>

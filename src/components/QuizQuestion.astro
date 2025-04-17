@@ -1,0 +1,25 @@
+---
+import { marked } from 'marked';
+
+const { question, index } = Astro.props;
+---
+<div class="quiz-block">
+  <div class="quiz-question" set:html={marked.parse(question.body)}></div>
+  <ul>
+    {question.options.map((opt, idx) => (
+      <li class="quiz-option">
+        <label>
+          <input
+            type="radio"
+            name={`quiz-${index}`}
+            value={idx}
+            data-question={index}
+            data-correct={opt.correct}
+          />
+          {opt.answer}
+        </label>
+      </li>
+    ))}
+  </ul>
+  <div id={`feedback-${index}`} class="quiz-feedback"></div>
+</div>

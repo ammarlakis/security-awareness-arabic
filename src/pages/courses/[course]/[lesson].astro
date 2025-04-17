@@ -1,0 +1,102 @@
+---
+import fs from "fs/promises";
+import { marked } from "marked";
+import yaml from "yaml";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import QuizContainer from "../../../components/QuizContainer.astro";
+import Navigation from "../../../components/Navigation.astro";
+import TableOfContents from "../../../components/TableOfContents.astro";
+import ProgressBar from "../../../components/ProgressBar.astro";
+
+export async function getStaticPaths() {
+  const courseDir = new URL("../../../courses", import.meta.url);
+  const courseFolders = await fs.readdir(courseDir);
+
+  const paths = [];
+  for (const course of courseFolders) {
+    const coursePath = new URL(`../../../courses/${course}`, import.meta.url);
+    const files = await fs.readdir(coursePath);
+    const lessons = files.filter((f) => f.endsWith(".md"));
+
+    lessons.forEach((file) => {
+      const lesson = file.replace(".md", "");
+      paths.push({ params: { course, lesson } });
+    });
+  }
+
+  return paths;
+}
+
+const { course, lesson } = Astro.params;
+let html = "";
+let quiz = [];
+let courseTitle = course;
+let lessonTitle = lesson;
+let previousLesson = null;
+let nextLesson = null;
+let tableOfContents = [];
+let progressPercent = 0;
+
+let currentIndex = 0;
+
+try {
+  const metaPath = new URL(
+    `../../../courses/${course}/meta.json`,
+    import.meta.url
+  );
+  const meta = JSON.parse(await fs.readFile(metaPath, "utf-8"));
+  courseTitle = meta.title || course;
+  const lessons = meta.lessons || [];
+
+  currentIndex = lessons.findIndex((l) => l.id === lesson);
+  if (currentIndex !== -1) {
+    lessonTitle = lessons[currentIndex].title || lesson;
+    previousLesson = lessons[currentIndex - 1]?.id;
+    nextLesson = lessons[currentIndex + 1]?.id;
+    progressPercent = Math.round(((currentIndex + 1) / lessons.length) * 100);
+  }
+
+  tableOfContents = lessons;
+
+  const lessonPath = new URL(
+    `../../../courses/${course}/${lesson}.md`,
+    import.meta.url
+  );
+  const raw = await fs.readFile(lessonPath, "utf-8");
+  html = marked.parse(raw);
+
+  const quizPath = new URL(
+    `../../../courses/${course}/${lesson}.yaml`,
+    import.meta.url
+  );
+  const quizRaw = await fs.readFile(quizPath, "utf-8");
+  quiz = yaml.parse(quizRaw);
+} catch (err) {
+  html =
+    "<h1>الدرس غير موجود</h1><p>تأكد من اسم الدورة أو تواصل مع المسؤول.</p>";
+}
+---
+
+
+<BaseLayout title={`${courseTitle} - ${lessonTitle}`}>
+  <div class="layout">
+    <main style="display: flex; flex-direction: column; height: 100%; padding-bottom: 40px;">
+      <a href="/">← العودة</a>
+      <h1>{courseTitle}</h1>
+      <h2>{lessonTitle}</h2>
+
+      <div set:html={html}></div>
+
+      {quiz.length > 0 && <QuizContainer quiz={quiz} />}
+
+      <Navigation course={course} previousLesson={previousLesson} nextLesson={nextLesson} />
+
+      <!-- Progress Bar at the bottom of the main section -->
+      <ProgressBar current={currentIndex + 1} total={tableOfContents.length} />
+    </main>
+
+    <aside>
+      <TableOfContents course={course} lesson={lesson} tableOfContents={tableOfContents} />
+    </aside>
+  </div>
+</BaseLayout>

@@ -1,0 +1,45 @@
+---
+import { marked } from 'marked';
+const { quiz } = Astro.props;
+---
+<div class="quiz-container">
+  {quiz.map((q, i) => (
+    <div class="quiz-block" key={i}>
+      <div class="quiz-question" set:html={marked.parse(q.body)}></div>
+      <ul>
+        {q.options.map((opt, idx) => (
+          <li class="quiz-option">
+            <label>
+              <input
+                type="radio"
+                name={`quiz-${i}`}
+                value={idx}
+                data-question={i}
+                data-correct={opt.correct}
+                aria-label={`اختيار ${idx + 1}: ${opt.answer}`}
+              />
+              {opt.answer}
+            </label>
+          </li>
+        ))}
+      </ul>
+      <div id={`feedback-${i}`} class="quiz-feedback"></div>
+    </div>
+  ))}
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const inputs = document.querySelectorAll('input[type="radio"][data-question]');
+      inputs.forEach((input) => {
+        input.addEventListener('change', () => {
+          const questionIndex = input.dataset.question;
+          const correct = input.dataset.correct === 'true';
+          const feedback = document.getElementById(`feedback-${questionIndex}`);
+          const radios = document.querySelectorAll(`input[name='quiz-${questionIndex}']`);
+          radios.forEach(r => r.disabled = true);
+          feedback.textContent = correct ? '✔️ إجابة صحيحة!' : '❌ إجابة خاطئة، حاول مرة أخرى.';
+          feedback.style.color = correct ? 'green' : 'red';
+        });
+      });
+    });
+  </script>
+</div>

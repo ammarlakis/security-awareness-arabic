@@ -1,0 +1,20 @@
+---
+const { title } = Astro.props;
+---
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{title}</title>
+    <meta name="description" content="A security education course for Syrians, teaching secure browsing and more." />
+    <meta name="keywords" content="security, education, Syrians, secure browsing, online safety" />
+    <meta property="og:title" content="{title}" />
+    <meta property="og:description" content="A security education course for Syrians, teaching secure browsing and more." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://example.com" />
+    <meta property="og:image" content="/favicon.svg" />
+    <link rel="stylesheet" href="/styles/global.css" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

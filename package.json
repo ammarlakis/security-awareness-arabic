@@ -9,6 +9,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.7.2"
+    "astro": "^5.7.2",
+    "marked": "^15.0.8",
+    "yaml": "^2.7.1"
   }
 }
